@@ -1,4 +1,5 @@
 # 후니가 문구를 수정했따
+# 팀장이 코드를 추가했습니다.
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
