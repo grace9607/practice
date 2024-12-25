@@ -206,4 +206,4 @@ if [ -f '/Users/jh.lee/Google/google-cloud-sdk/completion.zsh.inc' ]; then . '/U
 export GCLOUDPATH=/Users/jh.lee/Google/google-cloud-sdk
 export PATH=$PATH:$GCLOUDPATH/bin
 
-# 후니가 테스트 코드 추가
+# 후니가 테스트 코드 추가 2
