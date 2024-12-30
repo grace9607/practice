@@ -1,0 +1,329 @@
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(5deg) translateX(15px);
+    /* 애니메이션이 0%만큼 동작시 */
+  }
+
+  25% {
+    transform: rotate(odeg) translateX(0px);
+    /* 애니메이션이 25%만큼 동작시 */
+  }
+
+  50% {
+    transform: rotate(-5deg) translateX(-15px);
+    /* 애니메이션이 50%만큼 동작시 */
+  }
+
+  100% {
+    transform: rotate(0deg) translateX(0px);
+    /* 애니메이션이 100%만큼 동작시 */
+  }
+}
+
+
+main {
+  width: 1200px;
+  height: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  background-image: url('../source/main_background.png');
+  background-position: center;
+  background-size: cover;
+
+}
+
+#front {
+  z-index: 1;
+  position: absolute;
+  background-color: #A61C35;
+  background-image: url('../source/front_background_tentative.avif');
+  background-position: bottom center;
+  background-size: 66%;
+
+  width: 600px;
+  height: 600px;
+  text-align: center;
+
+
+  transition-duration: 2.5s;
+  transition-timing-function: ease;
+  transform-origin: 0;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+#front:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.openCard {
+  transform: rotateY(100deg);
+}
+
+#frontTitle {
+  background-color: rgb(243, 239, 234);
+  color: green;
+  font-size: 40pt;
+  text-align: center;
+  padding: 70px 40px 70px 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+
+#inside {
+  z-index: 0;
+  position: absolute;
+  background-color: white;
+  width: 600px;
+  height: 600px;
+  text-align: center;
+
+  /* 안쪽 카드 위치고정 */
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+#insideTo {
+  color: #000;
+  font-size: 18pt;
+  text-align: left;
+  padding: 15px 0px 10px 30px;
+}
+
+#insideTo span {
+  font-size: 14pt;
+}
+
+#msgdiv {
+  border-radius: 5px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#message {
+  color: #000;
+  font-size: 20pt;
+  text-align: center;
+  font-family: "Dongle", serif;
+  margin: 10px 0 10px 0;
+
+}
+
+#message span {
+  font-family: "Dongle", serif;
+}
+
+#message span:hover {
+  top: 5px;
+  font-size: xx-large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#insideFrom {
+  color: #000;
+  font-size: 18pt;
+  text-align: right;
+  padding: 0 40px 0 20px;
+  margin-top: -50px;
+}
+
+.btn {
+  margin-top: 18px;
+  font-size: 1.4em;
+  width: 160px;
+  height: 70px;
+  background: #735E5A;
+  color: #F2F2F2;
+  border: 0px;
+  position: relative;
+  box-shadow:
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #A68B81;
+}
+
+.btn:active {
+  top: 5px;
+  box-shadow:
+    -4px 2px 1px 1px grey,
+    -4px -2px 1px 1px lightgray,
+    4px 0px 1px 1px lightgray;
+}
+
+.btn::after {
+  content: '';
+  background: #1c2644;
+  position: absolute;
+  left: -2.5%;
+  top: 0;
+  width: 105%;
+  height: 100%;
+  z-index: -1;
+}
+
+.btn::before {
+  content: '';
+  background: #1c2644;
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 113%;
+  z-index: -1;
+}
+
+.close_btn {
+  width: 300px;
+  height: 300px;
+
+  position: relative;
+
+  background-image: url('../source/snata_gift.png');
+  background-position: center;
+  background-size: cover;
+
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.close_btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  top: 5px;
+}
+
+
+.close_btn:focus {
+  background-image: url('../source/close_btn_focus.jpeg');
+  background-position: center;
+  background-size: 140%;
+  opacity: 1;
+  animation: move 0.2s;
+  animation-iteration-count: 5;
+}
+
+/* 모달시작 */
+/* 버튼으로 사용할 라벨 디자인 */
+#modal_btn {
+
+  position: relative;
+  margin: 0;
+  padding: 10px;
+
+  font-size: 20pt;
+  text-align: center;
+  font-family: "Dongle", serif;
+
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#modal_btn:hover {
+  top: 5px;
+}
+
+/* 모달 윈도우 디자인 */
+.box_modal {
+  position: relative;
+  display: block;
+  width: 550px;
+  height: 550px;
+
+  /* top:50%;
+    left:50%;   */
+  margin-top: -490px;
+  margin-left: 25px;
+
+  box-shadow:
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
+
+  overflow: hidden;
+
+  background-image: url('../source/main_modal.avif');
+  background-position: center;
+  background-size: cover;
+
+  /* 아래 부분은 애니메이션 효과를 위한 부분 */
+  visibility: collapse;
+  opacity: 1;
+  filter: alpha(opacity=60);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+
+}
+
+#modal_text {
+  color: white;
+  font-family: "Dongle", serif;
+  font-size: 1.6em;
+
+  width: 478px;
+  height: 478px;
+  background-color: rgba(68, 61, 61, 0.714);
+  border-radius: 15px;
+  margin: 36px auto;
+
+}
+
+/* 닫기 버튼으로 사용할 라벨 */
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.closer {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  background: #eee;
+
+  padding: 5px;
+  box-shadow:
+    inset -4px 2px 1px 1px grey,
+    inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
+
+  text-align: center;
+  line-height: 26px;
+  font-size: 16x;
+  cursor: pointer;
+}
+
+/* 모달 윈도우가 팝업되는 코어 소스 */
+input#modal[type=checkbox]:checked~.box_modal {
+  visibility: visible;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
